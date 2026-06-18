@@ -1,0 +1,228 @@
+/* ── Kuu テーマ：最小構成 ── */
+:root {
+  --kuu-paper: #faf8f5;
+  --kuu-paper-deep: #f0ebe4;
+  --kuu-ink: #3d3a36;
+  --kuu-ink-muted: #8a8278;
+  --kuu-ink-faint: #b8b0a4;
+  --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "游明朝", "Noto Serif JP", Georgia, serif;
+  --font-sans: "Hiragino Sans", "Yu Gothic", "游ゴシック", system-ui, sans-serif;
+  --content-width: 65rem;
+  --page-gutter: clamp(1.5rem, 6vw, 4.5rem);
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-duration: 0.8s;
+  --reveal-breath: 0.8s;
+  --reveal-offset: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  color: var(--kuu-ink);
+  background: var(--kuu-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+strong,
+.font-bold {
+  font-weight: bold;
+}
+
+/* ユーティリティ（Tailwind 相当・手動執筆用） */
+.my-8 {
+  margin-block: 2rem;
+}
+
+.key-point {
+  font-size: 0.9375rem;
+  color: var(--kuu-ink-muted);
+  line-height: 1.95;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(61, 58, 54, 0.1);
+}
+
+.key-point + .diagram-img,
+.key-point + img {
+  margin-top: 1.5rem;
+}
+
+.diagram-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  background: var(--kuu-paper-deep);
+}
+
+/* ── 浮き上がるフェードイン ── */
+@keyframes rise-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-offset));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-fade-in {
+  animation: rise-fade-in var(--reveal-duration) var(--ease-reveal) both;
+  animation-delay: var(--reveal-breath);
+}
+
+.rise-fade-in--2 {
+  animation-delay: calc(var(--reveal-breath) + 0.14s);
+}
+
+.rise-fade-in--3 {
+  animation-delay: calc(var(--reveal-breath) + 0.28s);
+}
+
+/* ── レイアウト ── */
+.reading-page {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.reading-header {
+  padding: 1rem var(--page-gutter);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  color: var(--kuu-ink-faint);
+  border-bottom: 1px solid rgba(61, 58, 54, 0.05);
+}
+
+.article {
+  padding: 3rem 0 5rem;
+}
+
+.article__label {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  color: var(--kuu-ink-faint);
+  margin: 0 0 1.25rem;
+}
+
+.article__title {
+  font-size: clamp(1.625rem, 4vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.55;
+  letter-spacing: 0.05em;
+  margin: 0 0 2.5rem;
+}
+
+.article h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: 0.05em;
+  margin: 3.5rem 0 1.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(61, 58, 54, 0.08);
+}
+
+.article h2:first-of-type {
+  margin-top: 2rem;
+  padding-top: 0;
+  border-top: none;
+}
+
+.article h3 {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  margin: 2.5rem 0 1.25rem;
+}
+
+.article p {
+  margin: 0 0 1.25rem;
+}
+
+.article blockquote {
+  margin: 1.5rem 0;
+  padding: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--kuu-ink-muted);
+  line-height: 1.95;
+  border-bottom: 1px solid rgba(61, 58, 54, 0.1);
+}
+
+.article ul,
+.article ol {
+  margin: 0 0 1.5rem;
+  padding-left: 1.25rem;
+}
+
+.article li {
+  margin-bottom: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.95;
+  color: var(--kuu-ink-muted);
+}
+
+.article figure {
+  margin: 2rem 0 2.5rem;
+}
+
+.article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  background: var(--kuu-paper-deep);
+}
+
+.article figcaption {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--kuu-ink-muted);
+  text-align: center;
+  line-height: 1.8;
+}
+
+.article__note {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: var(--kuu-ink-faint);
+}
+
+@media (max-width: 40rem) {
+  body {
+    font-size: 1rem;
+    line-height: 1.95;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rise-fade-in,
+  .rise-fade-in--2,
+  .rise-fade-in--3 {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
