@@ -1,0 +1,81 @@
+/* Webライティングの教科書 — カスタムテーマ */
+
+:root {
+  --ifm-color-primary: #4a6741;
+  --ifm-color-primary-dark: #3f5938;
+  --ifm-color-primary-darker: #3b5435;
+  --ifm-color-primary-darkest: #31452b;
+  --ifm-color-primary-light: #55754a;
+  --ifm-color-primary-lighter: #597a4d;
+  --ifm-color-primary-lightest: #668b5a;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.9;
+  --ifm-heading-font-weight: 600;
+  --ifm-font-family-base: "Hiragino Sans", "Yu Gothic", "游ゴシック", system-ui, sans-serif;
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #8db580;
+  --ifm-color-primary-dark: #7caa6d;
+  --ifm-color-primary-darker: #73a363;
+  --ifm-color-primary-darkest: #5d8e4e;
+  --ifm-color-primary-light: #9ec093;
+  --ifm-color-primary-lighter: #a7c69d;
+  --ifm-color-primary-lightest: #c1d7ba;
+  --ifm-background-color: #1a1d23;
+}
+
+/* 本文の読みやすさ */
+.markdown {
+  font-size: 1.05rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+}
+
+.markdown p {
+  margin-bottom: 1.25rem;
+}
+
+.markdown h2 {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .markdown h2 {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.markdown h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* 引用を「要点」として強調 */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background: rgba(74, 103, 65, 0.05);
+  padding: 1rem 1.25rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.95rem;
+}
+
+[data-theme='dark'] .markdown blockquote {
+  background: rgba(141, 181, 128, 0.08);
+}
+
+/* テーブルの改善 */
+.markdown table {
+  font-size: 0.9rem;
+}
+
+/* コードブロック */
+.markdown pre {
+  border-radius: 6px;
+}
+
+/* サイドバーの章番号を目立たせる */
+.theme-doc-sidebar-menu .menu__link {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
