@@ -1,5 +1,5 @@
 ---
-slug: /00-preface-preface
+slug: /
 id: 00-preface-preface
 sidebar_position: 1
 title: "Webライティングは、死んでいない。むしろAI・SNS時代の今こそ、必要不可欠な技術である。"
